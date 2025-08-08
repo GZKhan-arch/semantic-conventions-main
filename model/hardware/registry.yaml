@@ -1,0 +1,109 @@
+groups:
+  - id: registry.hardware
+    type: attribute_group
+    display_name: Hardware Attributes
+    brief: >
+      Attributes for hardware.
+    attributes:
+      - id: hw.id
+        type: string
+        stability: development
+        brief: >
+          An identifier for the hardware component, unique within the monitored host
+        examples: ['win32battery_battery_testsysa33_1']
+      - id: hw.name
+        type: string
+        stability: development
+        brief: >
+          An easily-recognizable name for the hardware component
+        examples: ['eth0']
+      - id: hw.parent
+        type: string
+        stability: development
+        brief: >
+          Unique identifier of the parent component (typically the `hw.id` attribute of the enclosure, or disk controller)
+        examples: ['dellStorage_perc_0']
+      - id: hw.type
+        type:
+          members:
+            - id: battery
+              value: 'battery'
+              brief: "Battery"
+              stability: development
+            - id: cpu
+              value: 'cpu'
+              brief: 'CPU'
+              stability: development
+            - id: disk_controller
+              value: 'disk_controller'
+              brief: 'Disk controller'
+              stability: development
+            - id: enclosure
+              value: 'enclosure'
+              brief: 'Enclosure'
+              stability: development
+            - id: fan
+              value: 'fan'
+              brief: 'Fan'
+              stability: development
+            - id: gpu
+              value: 'gpu'
+              brief: 'GPU'
+              stability: development
+            - id: logical_disk
+              value: 'logical_disk'
+              brief: 'Logical disk'
+              stability: development
+            - id: memory
+              value: 'memory'
+              brief: 'Memory'
+              stability: development
+            - id: network
+              value: 'network'
+              brief: 'Network'
+              stability: development
+            - id: physical_disk
+              value: 'physical_disk'
+              brief: 'Physical disk'
+              stability: development
+            - id: power_supply
+              value: 'power_supply'
+              brief: 'Power supply'
+              stability: development
+            - id: tape_drive
+              value: 'tape_drive'
+              brief: 'Tape drive'
+              stability: development
+            - id: temperature
+              value: 'temperature'
+              brief: 'Temperature'
+              stability: development
+            - id: voltage
+              value: 'voltage'
+              brief: 'Voltage'
+              stability: development
+        stability: development
+        brief: >
+          Type of the component
+        note: >
+          Describes the category of the hardware component for which `hw.state` is being reported. For example,
+          `hw.type=temperature` along with `hw.state=degraded` would indicate that the temperature of the hardware
+          component has been reported as `degraded`.
+      - id: hw.state
+        type:
+          members:
+            - id: ok
+              value: 'ok'
+              brief: "Ok"
+              stability: development
+            - id: degraded
+              value: 'degraded'
+              brief: 'Degraded'
+              stability: development
+            - id: failed
+              value: 'failed'
+              brief: 'Failed'
+              stability: development
+        stability: development
+        brief: >
+          The current state of the component

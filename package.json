@@ -1,20 +1,30 @@
 {
-  "name": "thomyorke",
-  "version": "1.0.0",
-  "description": "nice dream",
-  "main": "index.js",
-  "type": "module",
   "scripts": {
-    "start": "node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "_check:format": "npx prettier --check .",
+    "_check:format:any": "npx prettier --check --ignore-path ''",
+    "check": "make check",
+    "check:format": "npm run _check:format || (echo '[help] Run: npm run format'; exit 1)",
+    "fix": "make fix",
+    "fix:format": "npm run _check:format -- --write",
+    "test": "npm run check"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "jsonfile": "^6.1.0",
-    "moment": "^2.30.1",
-    "random": "^4.1.0",
-    "simple-git": "^3.28.0"
+  "devDependencies": {
+    "markdown-toc": "^1.2.0",
+    "markdownlint-cli": "0.44.0",
+    "prettier": "^3.0.0"
+  },
+  "prettier": {
+    "proseWrap": "preserve",
+    "overrides": [
+      {
+        "files": [
+          "**/non-normative/groups/system/**/*.md"
+        ],
+        "options": {
+          "printWidth": 80,
+          "proseWrap": "always"
+        }
+      }
+    ]
   }
 }

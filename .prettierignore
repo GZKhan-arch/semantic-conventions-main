@@ -1,0 +1,16 @@
+/.github
+/.chloggen
+
+# for the first iteration, we only reformat /docs/cloud* and will add the rest in individual PRs
+/docs/**
+!/docs/cloud*
+!/docs/cloud*/**
+!/docs/registry*
+!/docs/registry*/**
+!/docs/non-normative*
+!/docs/non-normative/groups*
+!/docs/non-normative/groups/system*
+!/docs/non-normative/groups/system*/**
+/model
+/schemas
+CHANGELOG.md
